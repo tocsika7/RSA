@@ -17,16 +17,16 @@ public class RSA {
     public void Key_gen(){
 
         Random random = new Random();
-        BigInteger q = BigInteger.probablePrime(128,random);
-        BigInteger p = BigInteger.probablePrime(128,random);
+        BigInteger q = BigInteger.probablePrime(32,random);
+        BigInteger p = BigInteger.probablePrime(32,random);
 
 
         while (!mr.MR(p)){
-            p = BigInteger.probablePrime(128,random);
+            p = BigInteger.probablePrime(32,random);
         }
 
         while (!mr.MR(q)){
-            q = BigInteger.probablePrime(128,random);
+            q = BigInteger.probablePrime(32,random);
         }
 
         n = p.multiply(q);
@@ -45,6 +45,8 @@ public class RSA {
         }
 
         System.out.println("Keys generated.");
+        System.out.println("PK = ( "+n+" , "+e+" )");
+        System.out.println("SK = ( "+d+" )");
     }
 
     public BigInteger encrypt(BigInteger m){

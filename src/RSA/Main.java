@@ -8,6 +8,8 @@ public class Main {
     public static void main(String[] args) {
 
         RSA rsa = new RSA();
+
+
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
         rsa.Key_gen();
@@ -21,7 +23,7 @@ public class Main {
         if(choice.equals("dec")){
             BigInteger m = rsa.decrypt(message);
             if(message.equals(rsa.encrypt(m))){
-                System.out.println("Decryption successful the decrypted message is: "+m+ "the message was: "+rsa.encrypt(m));
+                System.out.println("Decryption successful the decrypted message is: "+m+ " the message was: "+rsa.encrypt(m));
             }
         }
         else if(choice.equals("enc")) {
@@ -32,4 +34,7 @@ public class Main {
         }
 
     }
-}
+
+
+    }
+
